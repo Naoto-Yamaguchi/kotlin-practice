@@ -3,7 +3,7 @@
 2. Dockerがインストールされてなければインストール
 https://www.docker.com
 3. シェルで、dockerファイルにディレクトリを移動して`docker-compose up`
-4. シェルで ｀./gradlew clean bootRun｀
+4. シェルで `./gradlew clean bootRun`
 5. http://localhost:8080/customers などにアクセス
 
 
