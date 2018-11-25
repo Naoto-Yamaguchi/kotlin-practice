@@ -44,4 +44,6 @@ class VoteApplicationService(
         val vote = voteRepository.findById(id) ?: throw RecordNotFoundException()
         voteRepository.delete(vote)
     }
+
+    
 }

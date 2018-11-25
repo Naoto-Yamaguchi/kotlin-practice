@@ -32,13 +32,14 @@ class VoteController(
 
         val id = voteApplicationService.create(voteInput)
 
-        return "redirect:/votes/${id}"
+        return "redirect:/votes/new"
     }
 
     @GetMapping("")
     fun index(model: Model): String {
         val votes = voteApplicationService.findAll()
         model.addAttribute("votes", votes)
+        val result =
         return "votes/index"
     }
 
@@ -86,4 +87,5 @@ class VoteController(
         voteApplicationService.delete(id)
         return "redirect:/votes"
     }
+
 }

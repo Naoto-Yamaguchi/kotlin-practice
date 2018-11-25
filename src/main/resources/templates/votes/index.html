@@ -12,16 +12,18 @@
 
 <ul th:unless="${votes.isEmpty()}">
     <li th:each="vote: ${votes}">
+        <span th:text="${vote.voter}"></span>が
+        <span th:text="${vote.candidate}"></span>に投票
         <!--<a th:text="${vote.id}" th:href="@{/__${vote.id}__}"></a>-->
-        <a th:text="${vote.voter}" th:href="@{/votes/__${vote.id}__}" class="vote-voter"></a>
+        <!-- <a th:text="${vote.voter}" th:href="@{/votes/__${vote.id}__}" class="vote-voter"></a>
         <a th:href="@{/votes/__${vote.id}__/edit}" class="vote-edit">投票</a>
         <form th:object="${vote}" th:action="@{/votes/__${vote.id}__}" th:method="delete">
             <input type="submit" value="削除" class="vote-delete"/>
-        </form>
+        </form> -->
         <!--<span th:text="${vote.candidate}"></span>-->
     </li>
 </ul>
-    <a th:href="@{/votes/new}" th:class="new-btn">作成</a>
+    <a th:href="@{/votes/new}" th:class="new-btn">投票</a>
     </div>
 </div>
 </body>
