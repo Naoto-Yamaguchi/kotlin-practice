@@ -14,9 +14,6 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" kotlindemo <<-EOSQL
         candidate varchar(50)
     );
 
-    insert into vote(voter, candidate) values ('hoge', 'fuga');
-    insert into vote(voter, candidate) values ('hoge', 'pal');
-    insert into vote(voter, candidate) values ('fuga', 'pal');
 
     create table customer (
         id serial,

@@ -10,10 +10,10 @@
     <div class="index-wrapper">
     <h1 class="index-title">投票</h1>
 <form th:method="post" th:action="@{./}" th:object="${voteInput}">
-    自分名前: <input type="text" th:field="*{voter}" />
+    自分名前: <input type="text" th:field="*{voter}" autocomplete="off" />
     <p th:if="${#fields.hasErrors('voter')}" th:errors="*{voter}"></p>
 
-    投票したい人の名前: <input type="text" th:field="*{candidate}" />
+    投票したい人の名前: <input type="text" th:field="*{candidate}" autocomplete="off" />
     <p th:if="${#fields.hasErrors('candidate')}" th:errors="*{candidate}"></p>
 
     <input type="submit" value="投票!!" />
