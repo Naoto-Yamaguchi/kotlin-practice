@@ -10,7 +10,7 @@ public class VoteDomaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
 
-    public Integer voter_id;
+    public String voter;
 
-    public String candidate_id;
+    public String candidate;
 }

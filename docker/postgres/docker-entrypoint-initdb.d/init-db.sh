@@ -8,15 +8,15 @@ EOSQL
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" kotlindemo <<-EOSQL
     BEGIN;
 
-    create table customer (
+    create table vote (
         id serial,
-        voter_id int,
-        candidate_id int
+        voter varchar(50),
+        candidate varchar(50)
     );
 
-    insert into customer(voter_id, candidate_id) values (1,2);
-    insert into customer(voter_id, candidate_id) values (2,3);
-    insert into customer(voter_id, candidate_id) values (3,1);
+    insert into vote(voter, candidate) values ('hoge', 'fuga');
+    insert into vote(voter, candidate) values ('hoge', 'pal');
+    insert into vote(voter, candidate) values ('fuga', 'pal');
 
     create table customer (
         id serial,

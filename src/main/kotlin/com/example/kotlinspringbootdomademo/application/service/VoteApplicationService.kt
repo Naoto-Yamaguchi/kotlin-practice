@@ -22,8 +22,8 @@ class VoteApplicationService(
 
     fun create(voteInput: VoteInput): Int {
         val vote = Vote(
-                voter_id = voteInput.voter_id!!,
-                candidate_id = voteInput.candidate_id!!
+                voter = voteInput.voter!!,
+                candidate = voteInput.candidate!!
         )
 
         return voteRepository.create(vote)
@@ -33,8 +33,8 @@ class VoteApplicationService(
         val existingVote = voteRepository.findById(id) ?: throw RecordNotFoundException()
 
         val vote = existingVote.copy(
-                voter_id = voteInput.voter_id!!,
-                candidate_id = voteInput.candidate_id!!
+                voter = voteInput.voter!!,
+                candidate = voteInput.candidate!!
         )
 
         voteRepository.update(vote)

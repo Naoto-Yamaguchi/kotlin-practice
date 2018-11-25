@@ -59,16 +59,16 @@ class VoteController(
     ): String {
         val vote = voteApplicationService.findById(id)
 
-        voteInput.voter_id = vote.voter_id
-        voteInput.candidate_id = vote.candidate_id
+        voteInput.voter = vote.voter
+        voteInput.candidate = vote.candidate
 
-        return "votess/edit"
+        return "votes/edit"
     }
 
     @PatchMapping("{id}")
     fun update(
             @PathVariable id: Int,
-            @Validated voteInput: voteInput,
+            @Validated voteInput: VoteInput,
             bindingResult: BindingResult
     ): String {
         if(bindingResult.hasErrors()) {

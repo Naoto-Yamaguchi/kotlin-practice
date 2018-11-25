@@ -38,8 +38,8 @@ class VoteRepositoryDomaImpl(
     private fun _mapToModel(domaEntity: VoteDomaEntity): Vote {
         return Vote(
                 id = domaEntity.id,
-                voter_id = domaEntity.voter_id,
-                candidate_id = domaEntity.candidate_id
+                voter = domaEntity.voter,
+                candidate = domaEntity.candidate
         )
     }
 
@@ -47,8 +47,8 @@ class VoteRepositoryDomaImpl(
     private fun _mapToDomaEntity(vote: Vote): VoteDomaEntity {
         return VoteDomaEntity().also {
             it.id = vote.id
-            it.voter_id = vote.voter_id
-            it.candidate_id = vote.candidate_id
+            it.voter = vote.voter
+            it.candidate = vote.candidate
         }
     }
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link th:href="@{/css/app.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <div class="index-wrapper">
+        <h1 class="index-title">投票結果</h1>
+
+<ul th:unless="${votes.isEmpty()}">
+    <li th:each="vote: ${votes}">
+        <!--<a th:text="${vote.id}" th:href="@{/__${vote.id}__}"></a>-->
+        <a th:text="${vote.voter}" th:href="@{/votes/__${vote.id}__}" class="vote-voter"></a>
+        <a th:href="@{/votes/__${vote.id}__/edit}" class="vote-edit">投票</a>
+        <form th:object="${vote}" th:action="@{/votes/__${vote.id}__}" th:method="delete">
+            <input type="submit" value="削除" class="vote-delete"/>
+        </form>
+        <!--<span th:text="${vote.candidate}"></span>-->
+    </li>
+</ul>
+    <a th:href="@{/votes/new}" th:class="new-btn">作成</a>
+    </div>
+</div>
+</body>
+</html>
