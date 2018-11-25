@@ -26,3 +26,5 @@ https://www.docker.com
 [Spling Boot(Kotlin) 始めの一歩](https://qiita.com//Yuki10/items/aef152f300a500b85725)
 
 [サーバーサイドKotlin(Spring Boot/Doma2)入門](https://qiita.com//maeharin/items/78325dbd629e4e6d2fdb#hello-world-%E3%81%9F%E3%81%A3%E3%81%9F3%E3%82%B9%E3%83%86%E3%83%83%E3%83%97)
+
+[Kotlin入門](http://gihyo.jp/dev/serial/01/jvm-kotlin/0001)
